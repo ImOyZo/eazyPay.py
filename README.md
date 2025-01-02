@@ -1,1 +1,1 @@
-# payment.py
+# eazyPay.py

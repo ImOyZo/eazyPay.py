@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #d92c2c;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .payment-box {
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .payment-box h2 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #666;
+            text-align: left;
+        }
+
+        .form-container {
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            
+        }
+
+        .payment-info {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .payment-info div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .payment-info div span:first-child {
+            font-weight: bold;
+        }
+
+        .btn {
+            background: #d92c2c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background: #b92424;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">eazyPay</div>
+    <div class="container">
+        <div class="payment-box">
+            <h2>Payment Information</h2>
+            <div class="form-container">
+                <div class="payment-info">
+                    <div>
+                        <span>From</span>
+                        <span>2308561020</span>
+                    </div>
+                    <div>
+                        <span>To</span>
+                        <span>2308561014</span>
+                    </div>
+                    <div>
+                        <span>Amount</span>
+                        <span>15.000.000</span>
+                    </div>
+                </div>
+                <button class="btn">Proceed To Pay</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #d22323;
+        }
+
+        .container {
+            text-align: left;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button.generate {
+            background-color: #eeeeee;
+            color: #333;
+        }
+
+        .button.generate:hover {
+            background-color: #dddddd;
+        }
+
+        .button.exit {
+            background-color: #d22323;
+            color: #ffffff;
+            width: auto;
+            padding: 10px 50px;
+            margin-left: 84px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .button.exit:hover {
+            background-color: #b81e1e;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">eazyPay</div>
+    <div class="container">
+        <div class="title">Create Invoice</div>
+        <button class="button generate">Generate Invoice</button>
+        <button class="button exit">Exit to Dashboard</button>
+    </div>
+</body>
+</html>

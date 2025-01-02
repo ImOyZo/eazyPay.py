@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 36px;
+            font-weight: bold;
+            color: #d81717;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .dashboard-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .profile-info {
+            text-align: left;
+        }
+
+        .profile-info h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .profile-info p {
+            margin: 0;
+            color: #777;
+        }
+
+        .account-balance-container {
+            margin: 20px 0;
+            padding: 15px;
+        }
+
+        .account-balance-label {
+            font-size: 18px;
+            font-weight: bold;
+            color: #b2b1b1;
+            margin-bottom: 10px;
+        }
+
+        .account-balance {
+            font-size: 18px;
+            font-weight: bold;
+            color: #a8a6a6;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons-container button {
+            background-color: #d81717;
+            color: #fef9f9;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buttons-container button:hover {
+            background-color: #e03135;
+        }
+
+        .account-dashboard-title {
+            margin: 20px 0 10px;
+            font-size: 14px;
+            color: #bebcbc;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">eazyPay</div>
+    <div class="dashboard-container">
+        <div class="profile">
+            <img src="Ellipse 1.png" alt="Profile Picture">
+            <div class="profile-info">
+                <h2>Jik Jhon</h2>
+                <p>2308561020</p>
+            </div>
+        </div>
+        <div class="account-balance-container">
+            <div class="account-balance-label">Account Balance</div>
+            <div class="account-balance">RP 20.000.500</div>
+        </div>
+        <div class="account-dashboard-title">Account Dashboard</div>
+        <div class="buttons-container">
+            <button>Perform Payment</button>
+            <button>Create Invoice</button>
+        </div>
+    </div>
+</body>
+</html>

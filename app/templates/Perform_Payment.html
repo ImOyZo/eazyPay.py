@@ -56,12 +56,12 @@
             background-color: #d32f2f;
             color: white;
             padding: 8px 15px;
-            border: none;
+            border: 5px;
             border-radius: 5px;
             font-size: 14px;
             cursor: pointer;
             display: block;
-            margin: 0 auto;
+            margin: 10px;
         }
 
         .form-container button:hover {
@@ -71,12 +71,47 @@
 </head>
 <body>
     <div class="logo">eazyPay</div>
-
     <div class="form-container">
         <h1>Perform Payment</h1>
-        <input type="text" placeholder="Input Username">
-        <input type="text" placeholder="Input payment number">
-        <button>Exit to Dashboard</button>
+        <form id="payment-form"> 
+            <input type="text" id="username" placeholder="Input Username">
+            <input type="text" id="account" placeholder="Input payment number">
+            <button type="submit">Perform Payment</button>
+        </form>
+        <button onclick="window.location.href = '/dashboard';">Exit to Dashboard</button>
     </div>
+
+    <script>
+        document.querySelector('#payment-form').addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent the default form submission
+    
+            // Get the input values
+            const username = document.querySelector('#username').value;
+            const account = document.querySelector('#account').value;
+    
+            // Send the login request
+            try {
+                const response = await fetch('/perform-payment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, account }),
+                });
+    
+                // Handle the response
+                const result = await response.json();
+                if (response.ok) {
+                    alert(result.message); // Show success message
+                    window.location.href = '/payment-success'; // Redirect to the next page
+                } else {
+                    alert(result.error); // Show error message
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
 </body>
 </html>

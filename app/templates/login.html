@@ -74,5 +74,37 @@
             <button type="submit">Perform Payment</button>
         </form>
     </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent the default form submission
+    
+            // Get the input values
+            const username = document.querySelector('input[type="text"]').value;
+            const password = document.querySelector('input[type="password"]').value;
+    
+            // Send the login request
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password }),
+                });
+    
+                // Handle the response
+                const result = await response.json();
+                if (response.ok) {
+                    alert(result.message); // Show success message
+                    window.location.href = '/dashboard'; // Redirect to the dashboard
+                } else {
+                    alert(result.error); // Show error message
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>    
 </body>
 </html>

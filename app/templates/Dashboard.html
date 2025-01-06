@@ -125,21 +125,42 @@
     <div class="logo">eazyPay</div>
     <div class="dashboard-container">
         <div class="profile">
-            <img src="Ellipse 1.png" alt="Profile Picture">
+            <img src="/app/templates/Ellipse1.png" alt="Profile Picture">
             <div class="profile-info">
-                <h2>Jik Jhon</h2>
-                <p>2308561020</p>
+                <h2> {{ user_name }}</h2>
+                <p> {{ user_account }} </p>
             </div>
         </div>
         <div class="account-balance-container">
             <div class="account-balance-label">Account Balance</div>
-            <div class="account-balance">RP 20.000.500</div>
+            <div class="account-balance">RP {{ user_balance | round(2) }}</div>
         </div>
         <div class="account-dashboard-title">Account Dashboard</div>
         <div class="buttons-container">
             <button>Perform Payment</button>
             <button>Create Invoice</button>
+            <button>Download Transaction</button>
         </div>
     </div>
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            // Select the buttons by their text
+            const performPaymentButton = document.querySelector("button:nth-child(1)");
+            const createInvoiceButton = document.querySelector("button:nth-child(2)");
+            const downloadTransactionButton = document.querySelector("button:nth-child(3)");
+    
+            performPaymentButton.addEventListener("click", function() {
+                window.location.href = "/perform-payment"; 
+            });
+    
+            createInvoiceButton.addEventListener("click", function() {
+                window.location.href = "/invoice"; 
+            });
+    
+            downloadTransactionButton.addEventListener("click", function() {
+            });
+        });
+    </script>
 </body>
 </html>

@@ -86,16 +86,50 @@
         <h2>Create Invoice</h2>
 
         <form>
-            <input type="text" placeholder="Merchant Username" required>
-            <input type="number" placeholder="Pricing Amount" required>
+            <input id="merchant-account" type="number" placeholder="Merchant Account" required>
+            <input id="pricing-amount" type="number" placeholder="Pricing Amount" required>
 
-            <button type="button" class="center-button">Proceed to Generate Payment Number</button>
+            <button type="submit" class="center-button">Proceed to Generate Payment Number</button>
 
             <div class="button-group">
-                <button type="button">Back</button>
-                <button type="button">Exit to Dashboard</button>
+                <button type="button" onclick="window.location.href='/invoice'">Back</button>
+                <button type="button" onclick="window.location.href='/dashboard'">Exit to Dashboard</button>
             </div>
         </form>
     </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent the default form submission
+    
+            // Get the input values
+            const account = document.querySelector('#merchant-account').value;
+            const amount = document.querySelector('#pricing-amount').value;
+    
+            // Send the login request
+            try {
+                const response = await fetch('/create-invoice', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ account, amount }),
+                });
+    
+                // Handle the response
+                const result = await response.json();
+                if (response.ok) {
+                    alert(result.message); // Show success message
+                    window.location.href = '/invoice-result'; // Redirect to the dashboard
+                } else {
+                    alert(result.error); // Show error message
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+
+        
+    </script>
 </body>
 </html>

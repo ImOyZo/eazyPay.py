@@ -45,7 +45,7 @@
             font-weight: bold;
             margin-bottom: 15px;
             color: #666;
-            text-align: left;
+            text-align: middle;
         }
 
         .form-container {
@@ -98,25 +98,24 @@
     <div class="logo">eazyPay</div>
     <div class="container">
         <div class="payment-box">
-            <h2>Payment Information</h2>
+            <h2>Payment Success</h2>
             <div class="form-container">
                 <div class="payment-info">
                     <div>
                         <span>From</span>
-                        <span>2308561020</span>
+                        <span>{{sender_account}}</span>
                     </div>
                     <div>
                         <span>To</span>
-                        <span>2308561014</span>
+                        <span>{{receiver_account}}</span>
                     </div>
                     <div>
                         <span>Amount</span>
-                        <span>15.000.000</span>
+                        <span>{{payment_amount}}</span>
                     </div>
                 </div>
-                <button class="btn">Proceed To Pay</button>
+                <button class="btn" onclick="window.location.href='/dashboard'">Back to Dashboard</button>
             </div>
         </div>
     </div>
 </body>
-</html>

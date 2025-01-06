@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Page</title>
+    <title>Invoice Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -45,7 +45,7 @@
             font-weight: bold;
             margin-bottom: 15px;
             color: #666;
-            text-align: middle;
+            text-align: left;
         }
 
         .form-container {
@@ -98,24 +98,25 @@
     <div class="logo">eazyPay</div>
     <div class="container">
         <div class="payment-box">
-            <h2>Payment Success</h2>
+            <h2>Invoice Information</h2>
             <div class="form-container">
                 <div class="payment-info">
                     <div>
                         <span>From</span>
-                        <span>2308561020</span>
+                        <span>{{user_account_sender}}</span>
                     </div>
                     <div>
                         <span>To</span>
-                        <span>2308561014</span>
+                        <span>{{user_account_receiver}}</span>
                     </div>
                     <div>
                         <span>Amount</span>
-                        <span>15.000.000</span>
+                        <span>{{user_amount}}</span>
                     </div>
                 </div>
-                <button class="btn">Back to Dashboard</button>
+                <button id="back-dashboard" class="btn" onclick="window.location.href='/dashboard'">Back to Dashboard</button>
             </div>
         </div>
     </div>
 </body>
+</html>
